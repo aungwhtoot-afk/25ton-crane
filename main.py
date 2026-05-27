@@ -141,29 +141,21 @@ def main(page: ft.Page):
     ], visible=False, spacing=15)
 
     def show_auto(e):
-        auto_btn.variant = ft.ButtonVariant.ELEVATED
         auto_btn.bgcolor = "blue"
-        auto_btn.color = "white"
-        manual_btn.variant = ft.ButtonVariant.OUTLINED
-        manual_btn.bgcolor = None
-        manual_btn.color = "green"
+        manual_btn.bgcolor = "grey"
         auto_col.visible = True
         manual_col.visible = False
         page.update()
 
     def show_manual(e):
-        auto_btn.variant = ft.ButtonVariant.OUTLINED
-        auto_btn.bgcolor = None
-        auto_btn.color = "blue"
-        manual_btn.variant = ft.ButtonVariant.ELEVATED
+        auto_btn.bgcolor = "grey"
         manual_btn.bgcolor = "green"
-        manual_btn.color = "white"
         auto_col.visible = False
         manual_col.visible = True
         page.update()
 
     auto_btn = ft.ElevatedButton("Auto Planner", on_click=show_auto, bgcolor="blue", color="white")
-    manual_btn = ft.OutlinedButton("Manual Check", on_click=show_manual, color="green")
+    manual_btn = ft.ElevatedButton("Manual Check", on_click=show_manual, bgcolor="grey", color="white")
     tab_row = ft.Row([auto_btn, manual_btn], alignment=ft.MainAxisAlignment.CENTER, spacing=20)
 
     page.add(
@@ -174,4 +166,3 @@ def main(page: ft.Page):
     )
 
 ft.app(target=main)
-
