@@ -20,7 +20,7 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install flet
-      - run: flet publish main.py
+      - run: flet publish main.py --base-url /${{ github.event.repository.name }}/
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -28,3 +28,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+tions/deploy-pages@v4
