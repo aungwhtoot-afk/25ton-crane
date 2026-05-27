@@ -24,7 +24,7 @@ jobs:
         run: pip install flet
 
       - name: Build APK
-        run: yes | flet build apk
+        run: yes | flet build apk --project-name crane_planner --app-name "Kobelco"
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
