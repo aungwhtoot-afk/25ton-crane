@@ -159,7 +159,11 @@ def main(page: ft.Page):
     tab_row = ft.Row([auto_btn, manual_btn], alignment=ft.MainAxisAlignment.CENTER, spacing=20)
 
     page.add(
-        ft.Text("Steel1 - Smart Planner", size=24, weight=ft.FontWeight.BOLD, color="blue"),
+        # ခေါင်းစဉ်ကို အပေါ်ကနေ 45px အောက်ချပေးထားပါတယ်
+        ft.Container(
+            content=ft.Text("Steel1 - Smart Planner", size=24, weight=ft.FontWeight.BOLD, color="blue"),
+            padding=ft.padding.only(top=45, bottom=10)
+        ),
         outrigger_dd, area_dd, parts_in, ft.Divider(),
         tab_row, ft.Divider(),
         auto_col, manual_col
